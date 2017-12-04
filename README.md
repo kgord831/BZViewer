@@ -10,3 +10,8 @@ Given reciprocal lattice vectors, construct a three dimensional Brillouin Zone.
 - *Make sure osnap is turned off!*
 - Call `scriptcall` then double-click on the generated cad_script.scr
 - Visualize!
+
+## Acknowledgements
+Thanks to
+http://www.thp.uni-koeln.de/trebst/Lectures/SolidState-2016/wigner_seitz_3d.py
+for introducing me to Voroni cells and how to use them to compute Brillouin zones.
