@@ -1,5 +1,5 @@
 # BZViewer
-Given reciprocal lattice vectors, construct a three dimensional Brillouin Zone.
+Given reciprocal lattice vectors, construct a three dimensional Brillouin Zone. Generates an AutoCAD script file which can construct the BZ in AutoCAD.
 
 ## How to use it
 - Open visualize.py
