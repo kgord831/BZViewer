@@ -280,7 +280,7 @@ if __name__ == "__main__":
     # BCC
     #faces_data = get_BZ(b1 = [1,1,0], b2 = [1,0,1], b3 = [0,1,1])
     # FCC
-    faces_data = get_BZ(b1=[1, 1, -1], b2=[1, -1, 1], b3=[-1, 1, 1])
+    faces_data = get_BZ(b1=[1.5108, 0.002267, 0.51954], b2=[0, 1.50646, 0.53901], b3=[0, 0, 1.08834])
 
     import json
     print(json.dumps(faces_data))
