@@ -60,6 +60,9 @@ def get_BZ(b1, b2, b3):
 
     # Get Voronois
     vor3d = Voronoi(np.array(points3d))
+    print("-----------")
+    print(vor3d.vertices)
+    print("-----------")
     # Get the vertices of the central" Voronoi( around the origin G=0)
     central_voronoi_3d = np.array([
         vor3d.vertices[idx]
@@ -343,14 +346,20 @@ if __name__ == "__main__":
     # output script
     output_file = "cad_script.scr"
     with open(output_file, "w") as f:
+        f.write(";Turn off object snapping\n")
+        f.write("osmode\n")
+        f.write("16384\n")
+        f.write("3dosmode 1\n")
         f.write(";Draw the lines for the surfaces\n")
-        for polyline in faces_coords:
-            print(polyline)
+        for triangle in faces_data['triangles']:
             f.write("._3dpoly" + '\n')
-            num_vertices = len(polyline)
-            for vertex in polyline:
-                f.write("%.4f,%.4f,%.4f%s" %
-                        (vertex[0], vertex[1], vertex[2], '\n'))
+            # triangle should be a length 3 vector
+            num_vertices = len(triangle)
+            for vertex in triangle:
+                f.write("%.5f,%.5f,%.5f%s" %
+                        (faces_data['triangles_vertices'][vertex][0],
+                        faces_data['triangles_vertices'][vertex][1],
+                        faces_data['triangles_vertices'][vertex][2], '\n'))
             f.write("close\n")
         f.write(";Create surface out of the lines\n")
         f.write("ai_selall\n")
